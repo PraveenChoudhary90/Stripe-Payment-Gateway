@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import BASE_URL from '../config';
+import axios from "axios";
 function Registration() {
 
      const [input, setInput] = useState("");
@@ -16,9 +17,34 @@ function Registration() {
      }
 
     const handelImages = (e)=>{
-        const files = e.target.files[0];
+        // const files = e.target.files;
+        setImages(e.target.files);
+        console.log(image);
     }
 
+
+     const HandelSubmit =async(e)=>{
+        e.preventDefault();
+        const api = `${BASE_URL}/shose/InsertProduct`;
+        const formData = new FormData();
+         for (let key in input) {
+            formData.append(key, input[key]);
+          }
+        
+          for (let i = 0; i < image.length; i++) {
+            formData.append('image', image[i]);
+          }  
+          
+        try {
+            const resposne = await axios.post(api, formData);
+            console.log(resposne.data);
+            alert("Products are Inserted");
+        } catch (error) {
+            console.log(error);
+        }
+
+
+     }
 
   return (
     <>
@@ -42,10 +68,10 @@ function Registration() {
       </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Enter Shoes  Images </Form.Label>
-        <Form.Control type="file" name='file' value={image} onChange={handelImages}/>
+        <Form.Label>Uploades Shoes  Images </Form.Label>
+        <Form.Control type="file" multiple  onChange={handelImages}/>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" onClick={HandelSubmit}>
         Submit
       </Button>
     </Form>
