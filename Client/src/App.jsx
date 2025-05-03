@@ -5,6 +5,8 @@ import Layout from './Layout'
 import Home from './Pages/Home'
 import About from './Pages/About'
 import Registration from './Pages/Registration'
+import CartData from './Pages/CartData'
+import CheckOut from './Pages/CheckOut'
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
       <Route path='home' element={<Home/>}/>
       <Route path='about' element={<About/>}/>
       <Route path='registration' element={<Registration/>}/>
+      <Route path='cartdata' element={<CartData/>}/>
+      <Route path='checkout' element={<CheckOut/>}/>
       </Route>
      </Routes>
      
