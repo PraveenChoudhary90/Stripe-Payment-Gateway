@@ -2,3 +2,10 @@
     margin: auto;
     width: 400px;
 }
+
+#card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin: 30px;
+}

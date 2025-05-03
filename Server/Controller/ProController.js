@@ -22,6 +22,13 @@ const InsertProduct = async(req,res)=>{
     res.send("okk");
 }
 
+const DisplayProduct =async(req,res)=>{
+    const Data = await ProModel.find();
+    res.status(200).send(Data);
+}
+
+
 module.exports = {
-    InsertProduct
+    InsertProduct,
+    DisplayProduct
 }

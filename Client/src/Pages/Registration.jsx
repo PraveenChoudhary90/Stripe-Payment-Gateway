@@ -38,7 +38,7 @@ function Registration() {
         try {
             const resposne = await axios.post(api, formData);
             console.log(resposne.data);
-            alert("Products are Inserted");
+            alert(resposne.data.msg);
         } catch (error) {
             console.log(error);
         }

@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import { MdLocalGroceryStore } from "react-icons/md";
 const TopNav = ()=>{
     return(
         <>
@@ -14,6 +15,7 @@ const TopNav = ()=>{
             <Nav.Link as={Link}  to="about">About</Nav.Link>
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
+            <MdLocalGroceryStore style={{color:"white", fontSize:"40px"}}  />
         </Container>
       </Navbar>
         
