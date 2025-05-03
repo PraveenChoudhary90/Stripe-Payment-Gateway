@@ -5,11 +5,20 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './store.jsx';
 import {Provider} from "react-redux";
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import Payment from './Pages/Payment.jsx';
+
+
+const stripePromise = loadStripe('pk_test_51RKGV8I6Nv23y5n8CnPSGkkDTdti3DAKy5CKr9blkVJaYN3U0NZ5YAQSrPSMsSSn8yHWdeGx0LNhGWOwOSIbcpEz00lPNnsd4y');
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
+       <Elements stripe={stripePromise}>
+      <Payment />
     <App />
+    </Elements>
     </Provider>
   </StrictMode>
 )
