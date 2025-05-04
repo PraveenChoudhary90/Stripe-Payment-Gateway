@@ -56,6 +56,7 @@ router.post('/create-checkout-session', async (req, res) => {
       transactionId: session.id
     });
 
+    
     await order.save();
     // Return the session URL to the frontend
     res.json({ url: session.url });
