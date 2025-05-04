@@ -5,9 +5,7 @@ import App from './App.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './store.jsx';
 import {Provider} from "react-redux";
-// import { loadStripe } from '@stripe/stripe-js';
-// import { Elements } from '@stripe/react-stripe-js';
-// import Payment from './Pages/Payment.jsx';
+
 
 
 
