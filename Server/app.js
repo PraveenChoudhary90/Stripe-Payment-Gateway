@@ -5,7 +5,6 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
 const path = require('path');
-const Stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const ProRoutes = require("./Routes/ProRoutes");
 const Payment = require("./Routes/pyment");

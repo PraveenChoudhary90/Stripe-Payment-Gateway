@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 const Order = require("../Model/ProModel")
 dotenv.config();
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+const stripe = new Stripe(data, {
   apiVersion: '2020-08-27',
 });
 
@@ -56,7 +56,7 @@ router.post('/create-checkout-session', async (req, res) => {
       transactionId: session.id
     });
 
-    
+
     await order.save();
     // Return the session URL to the frontend
     res.json({ url: session.url });
