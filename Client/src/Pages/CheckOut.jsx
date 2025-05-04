@@ -50,7 +50,7 @@ const navigate= useNavigate();
     //payment intrgration
 
     const handlePay = async()=>{
-        const stripe = await loadStripe("pk_test_51RKGV8I6Nv23y5n8CnPSGkkDTdti3DAKy5CKr9blkVJaYN3U0NZ5YAQSrPSMsSSn8yHWdeGx0LNhGWOwOSIbcpEz00lPNnsd4y");
+        const stripe = await loadStripe("");
         
 
         const body = {

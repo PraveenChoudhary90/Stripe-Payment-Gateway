@@ -10,7 +10,6 @@ import {Provider} from "react-redux";
 // import Payment from './Pages/Payment.jsx';
 
 
-// const stripePromise = loadStripe('pk_test_51RKGV8I6Nv23y5n8CnPSGkkDTdti3DAKy5CKr9blkVJaYN3U0NZ5YAQSrPSMsSSn8yHWdeGx0LNhGWOwOSIbcpEz00lPNnsd4y');
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
