@@ -7,7 +7,6 @@ require("dotenv").config();
 const path = require('path');
 
 const ProRoutes = require("./Routes/ProRoutes");
-const Payment = require("./Routes/pyment");
 
 app.use(cors());
 
@@ -23,7 +22,6 @@ mongoose.connect(process.env.CONNECTION_STRING).then(()=>{
 
 
 app.use("/shose", ProRoutes)
-app.use("/shoes", Payment);
 
 const port =process.env.PORT || 8000
 app.listen(port, ()=>{

@@ -8,7 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 // import axios from "axios";
 // import { cartEmpty } from "../cartSlice";
 import BASE_URL from '../config';
-import {loadStripe} from '@stripe/stripe-js';
+// import {loadStripe} from '@stripe/stripe-js';
 
 function CheckOut() {
 
@@ -50,26 +50,7 @@ const navigate= useNavigate();
     //payment intrgration
 
     const handlePay = async()=>{
-        const stripe = await loadStripe("");
-        
 
-        const body = {
-            Products:Product
-        }
-        const headers = {
-          "Content-Type":"application/json"
-        }
-
-        const response = await fetch(`${BASE_URL}/shoes/create-checkout-session`,{
-          method:"POST",
-          headers:headers,
-          body:JSON.stringify(body)
-        })
-    
-    const session = await response.json();
-    const result = stripe.redirectToCheckout({
-      sessionId:session.id
-    });
     }
 
 
