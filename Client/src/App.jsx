@@ -7,6 +7,8 @@ import About from './Pages/About'
 import Registration from './Pages/Registration'
 import CartData from './Pages/CartData'
 import CheckOut from './Pages/CheckOut'
+import Success from './Pages/Success'
+import Failed from './Pages/Failed'
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
       <Route path='registration' element={<Registration/>}/>
       <Route path='cartdata' element={<CartData/>}/>
       <Route path='checkout' element={<CheckOut/>}/>
+      <Route path='success' element={<Success/>}/>
+      <Route path='failed' element={<Failed/>}/>
       </Route>
      </Routes>
      

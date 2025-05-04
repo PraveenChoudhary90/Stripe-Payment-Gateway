@@ -56,9 +56,20 @@ const navigate= useNavigate();
         const body = {
             Products:Product
         }
-        const headers = {}
+        const headers = {
+          "Content-Type":"application/json"
+        }
+
+        const response = await fetch(`${BASE_URL}/shoes/create-checkout-session`,{
+          method:"POST",
+          headers:headers,
+          body:JSON.stringify(body)
+        })
     
-    
+    const session = await response.json();
+    const result = stripe.redirectToCheckout({
+      sessionId:session.id
+    });
     }
 
 
