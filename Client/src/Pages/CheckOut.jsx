@@ -103,7 +103,6 @@ const stripePromise = loadStripe('pk_test_51RKGV8I6Nv23y5n8CnPSGkkDTdti3DAKy5CKr
 
 function CheckOut() {
   const Product = useSelector((state) => state.mycart.cart);
-
   const totalAmount = Product.reduce((acc, item) => acc + item.price * item.qnty, 0);
 
   const handlePay = async () => {
@@ -113,10 +112,10 @@ function CheckOut() {
   name: item.name,
   price: item.price,
   qnty: item.qnty,
-  image: `${BASE_URL}/${item.defaultImage}`, // <-- Send full image URL
+  image: `${BASE_URL}/${item.defaultImage}`,
 }));
 
-
+console.log(cartItems);
     const response = await axios.post(`${BASE_URL}/create-checkout-session`, {
       cartItems,
     });
