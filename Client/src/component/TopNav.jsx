@@ -22,8 +22,10 @@ const TopNav = ()=>{
             <Nav.Link as={Link}  to="about">About</Nav.Link>
             <Nav.Link  as={Link}  to="registration">Registration</Nav.Link>
           </Nav>
+          <div style={{color:"white"}}>
             Store<MdLocalGroceryStore style={{color:"white", fontSize:"30px"}} onClick={()=>{navigate("/cartdata")}}  />
             {ProLength}
+            </div>
         </Container>
       </Navbar>
         
